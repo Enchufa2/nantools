@@ -1,0 +1,10 @@
+src net 192
+src net 192.168
+src net 192 and dst net 192
+src net 192 and dst net 192.168
+ 
+dst net 192
+dst net 192.168
+src net 192.168 and dst net 192
+src net 192.168 and dst net 192.168
+
