@@ -15,9 +15,16 @@
 #endif
 
 #include <stdio.h>
-#include <string.h>
 #include <sys/time.h>
+#include <string.h>
+#include <errno.h>
 #include <pcap/pcap.h>
+
+#define UTILS_CHECK(cond, err, ret) \
+	if (cond) { \
+		fprintf(stderr, "Error: %s : %s\n", __func__, strerror(err)); \
+		ret; \
+	}
 
 double utils_timeval2float(struct timeval *tv);
 
