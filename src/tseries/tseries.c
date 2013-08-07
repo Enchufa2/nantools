@@ -25,7 +25,7 @@
 
 void print_options() {
 	fprintf(stderr, "\ntseries %s\n", TSERIES_VERSION);
-	fputs(	"This tool computes multiple time series, one per input filter, from network traces.\n"
+	fputs(	"Computes multiple time series, one per input filter, from PCAP files.\n"
 			"http://github.com/Enchufa2/nantools\n\n"
 			"Usage: tseries [options] -i <file> -f <filters>\n"
 			"  -i <file>        PCAP file\n"

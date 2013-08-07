@@ -21,7 +21,7 @@
 
 void print_options() {
 	fprintf(stderr, "\ninfodups %s\n", INFODUPS_VERSION);
-	fputs(	"This tool identifies and marks duplicates packets in a network trace.\n"
+	fputs(	"Identifies and marks duplicate packets in PCAP files.\n"
 			"http://github.com/Enchufa2/nantools\n\n"
 			"Usage: infodups [options] -i <file>\n"
 			"  -i <file>        PCAP file\n\n"
