@@ -5,7 +5,7 @@ OBJ_SRCS :=
 ASM_SRCS := 
 OBJS := 
 C_DEPS := 
-EXECUTABLES := tseries 
+EXECUTABLES := infodups tseries 
 
 # Every subdirectory with source files must be described here
 SUBDIRS := \
