@@ -15,21 +15,21 @@
 #include "buffer.h"
 
 #ifndef PKT_BYTES
-#define PKT_BYTES 5000	/**< maximum packet size allowed */
+#define PKT_BYTES 5000  /**< maximum packet size allowed */
 #endif
 
 /**
  * Packet statistics
  */
 typedef struct {
-	struct timeval		startTime;	/**< time of the first packet */
-	struct timeval		endTime;	/**< time of the last packet */
+    struct timeval      startTime;  /**< time of the first packet */
+    struct timeval      endTime;    /**< time of the last packet */
 
-	unsigned long long 	numPkts;	/**< total number of packets */
-	unsigned long long 	numErrors;	/**< number of errors */
-	unsigned long long 	numIP;		/**< number of IP packets */
-	unsigned long long 	numTCP;		/**< number of TCP packets */
-	unsigned long long 	numUDP;		/**< number of UDP packets */
+    unsigned long long  numPkts;    /**< total number of packets */
+    unsigned long long  numErrors;  /**< number of errors */
+    unsigned long long  numIP;      /**< number of IP packets */
+    unsigned long long  numTCP;     /**< number of TCP packets */
+    unsigned long long  numUDP;     /**< number of UDP packets */
 } pktStats_t;
 
 typedef struct pkt pkt_t;
@@ -39,37 +39,37 @@ typedef struct dissector dissector_t;
  * Packet dissector
  */
 struct dissector {
-	const char 		*src;			/**< pointer to the source MAC */
-	const char 		*dst;			/**< pointer to the destination MAC */
-	unsigned short	ethertype;		/**< ethertype */
-	void 			*data;			/**< pointer to the upper level data */
-	int 			bufSize;		/**< size of captured data */
-	int 			pktSize;		/**< real size of data */
+    const char      *src;           /**< pointer to the source MAC */
+    const char      *dst;           /**< pointer to the destination MAC */
+    unsigned short  ethertype;      /**< ethertype */
+    void            *data;          /**< pointer to the upper level data */
+    int             bufSize;        /**< size of captured data */
+    int             pktSize;        /**< real size of data */
 
-	IPPacket_t 		*ipPkt;			/**< pointer to the IP header */
-	unsigned int 	protocol;		/**< transport protocol */
-	int 			offset;			/**< IP offset */
-	const char 		*ipData;		/**< pointer to IP data */
-	int 			ipBufSize;		/**< size of captured IP data */
-	int 			ipPktSize;		/**< real size of IP data */
+    IPPacket_t      *ipPkt;         /**< pointer to the IP header */
+    unsigned int    protocol;       /**< transport protocol */
+    int             offset;         /**< IP offset */
+    const char      *ipData;        /**< pointer to IP data */
+    int             ipBufSize;      /**< size of captured IP data */
+    int             ipPktSize;      /**< real size of IP data */
 
-	void 			*sgmt;			/**< pointer to the transport header */
-	unsigned short 	srcPort;		/**< source port */
-	unsigned short 	dstPort;		/**< destination port */
-	const char 		*sgmtData;		/**< pointer to transport level data */
-	int 			sgmtBufSize;	/**< size of captured transport data */
-	int 			sgmtPktSize;	/**< real size of transport data */
+    void            *sgmt;          /**< pointer to the transport header */
+    unsigned short  srcPort;        /**< source port */
+    unsigned short  dstPort;        /**< destination port */
+    const char      *sgmtData;      /**< pointer to transport level data */
+    int             sgmtBufSize;    /**< size of captured transport data */
+    int             sgmtPktSize;    /**< real size of transport data */
 };
 
 /**
  * Packet struct
  */
 struct pkt {
-	unsigned long long 	pos;		/**< position */
-	long double 		time;		/**< decoded timestamp */
-	ethFrame_t 			*frame;		/**< pointer to ethernet header */
-	dissector_t 		dis;		/**< packet dissector */
-	node_t 				*container;	/**< pointer to the container node */
+    unsigned long long  pos;        /**< position */
+    long double         time;       /**< decoded timestamp */
+    ethFrame_t          *frame;     /**< pointer to ethernet header */
+    dissector_t         dis;        /**< packet dissector */
+    node_t              *container; /**< pointer to the container node */
 };
 
 // initializer

@@ -16,8 +16,8 @@ typedef struct {
     unsigned short  dstPort;
     unsigned int    seqNumber;
     unsigned int    ackNumber;
-    unsigned char   dataOffset_Reserved; // 4 bits dataOffset, 4 bits reserved
-    unsigned char   flags; // CWR (RFC 3168 ECN), ECE (idem), URG, ACK, PSH, RST, SYN, FIN
+    unsigned char   dataOffset_Reserved;    // 4 bits dataOffset, 4 bits reserved
+    unsigned char   flags;                  // CWR (RFC 3168 ECN), ECE (idem), URG, ACK, PSH, RST, SYN, FIN
     unsigned short  window;
     unsigned short  checksum;
     unsigned short  urgentPointer;
@@ -25,9 +25,9 @@ typedef struct {
 
 // segment
 typedef struct {
-    TCPheader_t *bytes; 	// segment bytes
-    int size;   			// real size
-    int caplen; 			// captured size
+    TCPheader_t *bytes; // segment bytes
+    int size;           // real size
+    int caplen;         // captured size
 } TCPSegment_t;
 
 // get source port (error: -1)

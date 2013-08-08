@@ -15,22 +15,22 @@
 #include <sys/time.h>
 
 // frame types
-#define ETH_FRAMETYPE_ERROR 		-1
-#define ETH_FRAMETYPE_NOTCHECKED	0
-#define ETH_FRAMETYPE_8021Q 		1
-#define ETH_FRAMETYPE_8021ad 		2
-#define ETH_FRAMETYPE_8021ah 		3
-#define ETH_FRAMETYPE_DIX   		4
-#define ETH_FRAMETYPE_8023 			5
-#define ETH_FRAMETYPE_MAXVALUE  	5
+#define ETH_FRAMETYPE_ERROR        -1
+#define ETH_FRAMETYPE_NOTCHECKED    0
+#define ETH_FRAMETYPE_8021Q         1
+#define ETH_FRAMETYPE_8021ad        2
+#define ETH_FRAMETYPE_8021ah        3
+#define ETH_FRAMETYPE_DIX           4
+#define ETH_FRAMETYPE_8023          5
+#define ETH_FRAMETYPE_MAXVALUE      5
 
 // frame
 typedef struct {
-    const char *bytes;       	// frame bytes
-    int size;               	// real size, without CRC (> 60)
-    int caplen;             	// captured size
-    int frameType;          	// frame type (default: ETH_FRAMETYPE_NOTCHECKED)
-    struct timeval timestamp;	// timestamp
+    const char      *bytes;     // frame bytes
+    int             size;       // real size, without CRC (> 60)
+    int             caplen;     // captured size
+    int             frameType;  // frame type (default: ETH_FRAMETYPE_NOTCHECKED)
+    struct timeval  timestamp;  // timestamp
 } ethFrame_t;
 
 struct timeval eth_get_timestamp(ethFrame_t *frame);

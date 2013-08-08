@@ -11,19 +11,19 @@
 #define DSTRIES_H_
 
 typedef struct {
-	int id;
-	unsigned int srcIP;
-	unsigned int srcMask;
-	unsigned int dstIP;
-	unsigned int dstMask;
+    int id;
+    unsigned int srcIP;
+    unsigned int srcMask;
+    unsigned int dstIP;
+    unsigned int dstMask;
 } filter_t;
 
 typedef struct filterList filterList_t;
 
 struct filterList{
-	filter_t *filter;
-	filterList_t *next;
-	filterList_t *prev;
+    filter_t        *filter;
+    filterList_t    *next;
+    filterList_t    *prev;
 };
 
 typedef struct srcNode srcNode_t;

@@ -27,8 +27,8 @@ inline long double utils_timespec2float(struct timespec *tv) {
 
 inline void utils_mac2txt(const char *macAddress, char *txt) {
     //static char txt[20];
-    unsigned char   *mac = (unsigned char*)macAddress;    
-    char    aux[5];
+    unsigned char *mac = (unsigned char*)macAddress;    
+    char aux[5];
     int i = 0;
     
     txt[0] = 0;
@@ -43,28 +43,28 @@ inline void utils_mac2txt(const char *macAddress, char *txt) {
 }
 
 unsigned long long utils_fsize(char *file) {
-	struct stat buf;
-	stat(file, &buf);
-	return (unsigned long long)buf.st_size;
+    struct stat buf;
+    stat(file, &buf);
+    return (unsigned long long)buf.st_size;
 }
 
 inline void utils_print_progress(pcap_t *cap, unsigned long long size) {
-	static double realTimeLastLog = 0;
-	static int lastPercent = -1;
-	
-	struct timeval  presentTime_tv;
-	gettimeofday(&presentTime_tv, NULL);
-	double presentTime = presentTime_tv.tv_sec+presentTime_tv.tv_usec/1000000.0;
+    static double realTimeLastLog = 0;
+    static int lastPercent = -1;
+    
+    struct timeval  presentTime_tv;
+    gettimeofday(&presentTime_tv, NULL);
+    double presentTime = presentTime_tv.tv_sec+presentTime_tv.tv_usec/1000000.0;
 
-	if (realTimeLastLog == 0) realTimeLastLog = presentTime;
-	if (presentTime-realTimeLastLog <= UTILS_MAXTIME_SHOWPROGRESS) return;
-	realTimeLastLog = presentTime;
+    if (realTimeLastLog == 0) realTimeLastLog = presentTime;
+    if (presentTime-realTimeLastLog <= UTILS_MAXTIME_SHOWPROGRESS) return;
+    realTimeLastLog = presentTime;
 
-	// Calculate the ratio of complete-to-incomplete.
-	unsigned long long x = (unsigned long long)ftello(pcap_file(cap));
-	int percent = (int)(x * 10000 / (float)size);
-	if (percent <= lastPercent) return;
-	lastPercent = percent;
+    // Calculate the ratio of complete-to-incomplete.
+    unsigned long long x = (unsigned long long)ftello(pcap_file(cap));
+    int percent = (int)(x * 10000 / (float)size);
+    if (percent <= lastPercent) return;
+    lastPercent = percent;
 
-	fprintf(stderr, "Progress: %0.2f %% (%llu of %llu)\n", percent/(float)100, x, size);
+    fprintf(stderr, "Progress: %0.2f %% (%llu of %llu)\n", percent/(float)100, x, size);
 }

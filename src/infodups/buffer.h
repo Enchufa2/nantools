@@ -10,7 +10,7 @@
 #ifndef BUFFER_H_
 #define BUFFER_H_
 
-#define BUFFER_MAX_WORKERS 64		/**< maximum number of workers */
+#define BUFFER_MAX_WORKERS 64   /**< maximum number of workers */
 
 #include <pthread.h>
 
@@ -21,12 +21,12 @@ typedef struct buffer buffer_t;
  * Double-linked list
  */
 struct node {
-	unsigned long long	inUse;		/**< this flag can be used to mark the lower bound of a thread's window */
-	void 				*load;		/**< Pointer to the node's content */
-	node_t 				*prev;		/**< previous node */
-	node_t 				*next;		/**< next node */
-	buffer_t 			*buffer;	/**< pointer to the buffer */
-	pthread_mutex_t 	mutex;		/**< node mutex */
+    unsigned long long  inUse;      /**< this flag can be used to mark the lower bound of a thread's window */
+    void                *load;      /**< Pointer to the node's content */
+    node_t              *prev;      /**< previous node */
+    node_t              *next;      /**< next node */
+    buffer_t            *buffer;    /**< pointer to the buffer */
+    pthread_mutex_t     mutex;      /**< node mutex */
 };
 
 // with threads

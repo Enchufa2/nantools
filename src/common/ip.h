@@ -15,16 +15,16 @@
 
 // IPv4 header
 typedef struct {
-    unsigned char version_HeaderLength; // 4 bits version, 4 bits internet header length
-    unsigned char dscpEcn; // 6 bits DSCP, 2 bits ECN
-    unsigned short totalLength;
-    unsigned short identification;
-    unsigned short flags_Offset; // 1 bit flag reserved, 1 bit DF, 1 bit MF, 13 bits fragmentOffset
-    unsigned char ttl;
-    unsigned char protocol;
-    unsigned short headerChecksum;
-    unsigned int srcAddr;
-    unsigned int dstAddr;
+    unsigned char   version_HeaderLength;   // 4 bits version, 4 bits internet header length
+    unsigned char   dscpEcn;                // 6 bits DSCP, 2 bits ECN
+    unsigned short  totalLength;
+    unsigned short  identification;
+    unsigned short  flags_Offset;           // 1 bit flag reserved, 1 bit DF, 1 bit MF, 13 bits fragmentOffset
+    unsigned char   ttl;
+    unsigned char   protocol;
+    unsigned short  headerChecksum;
+    unsigned int    srcAddr;
+    unsigned int    dstAddr;
 } IPheader_t;
 /*
  0                   1                   2                   3   
@@ -61,8 +61,8 @@ typedef struct {
 
 // packet
 typedef struct {
-    IPheader_t *bytes;     		// packet bytes
-    int caplen;     			// captured size
+    IPheader_t  *bytes; // packet bytes
+    int         caplen; // captured size
 } IPPacket_t;
 
 // true if captured bytes cover the entire IP header

@@ -19,8 +19,8 @@ C_DEPS += $(C_DEPS_TSERIES)
 
 # Each subdirectory must supply rules for building sources it contributes
 src/%.o: ../src/%.c
-	@echo 'Building file: $<'
-	@echo 'Invoking: GCC C Compiler'
-	gcc $(CFLAGS) -c -MF"$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -o "$@" "$<"
-	@echo 'Finished building: $<'
-	@echo ' '
+    @echo 'Building file: $<'
+    @echo 'Invoking: GCC C Compiler'
+    gcc $(CFLAGS) -c -MF"$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -o "$@" "$<"
+    @echo 'Finished building: $<'
+    @echo ' '
