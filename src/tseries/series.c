@@ -177,7 +177,7 @@ inline void series_compute(void *arg, int i) {
         series[i].bytesInInterval = data->bytes;
         series[i].packetsInInterval = 1;
     }
-    else {
+    else if (pktTime >= series[i].intervalStartTime) {
         series[i].bytesInInterval += data->bytes;
         series[i].packetsInInterval++;
     }
