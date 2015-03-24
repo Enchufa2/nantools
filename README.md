@@ -28,7 +28,7 @@ make tseries
 
 Any network traffic monitoring system, especially port-mirroring schemes, has to deal with a challenging problem: the traffic capturing process almost invariably produces duplicate packets. Some tools like `editcap`, from `wireshark/tshark`, can remove only exact copies of packets. Nevertheless, there are different types of duplicates that don't constitute identical copies in general. For more information about the problem of duplicates, you can read this paper:
 
-> [Coming soon. Pending publication in the _IEEE International Workshop on Measurements & Networking 2013_]
+> I. Ucar, D. Morato, E. Magana, M. Izal, __Duplicate detection methodology for IP network traffic analysis__, _2013 IEEE International Workshop on Measurements and Networking Proceedings (M&N)_, pp.161,166, 7-8 Oct. 2013. [DOI: 10.1109/IWMN.2013.6663796](http://doi.org/10.1109/IWMN.2013.6663796)
 
 This tool is intended to identify and mark duplicate packets in PCAP files. Here is an execution example with a sliding window of 10 ms:
 
@@ -91,7 +91,7 @@ Each line contains:
 
 This alternative filtering mode only allows us to define source and/or destination nets and IPs, but it has an efficiency advantage over the BPF equivalent. While filtering with _N_ BPF filters has time cost _O(N)_, net filters improve this to _O(1)_. It can be achieved using a special data structure called __Grid-of-Tries__. This particular implementation was inspired in the following paper:
 
-> V. Srinivasan, G. Varghese, S. Suri, and M. Waldvogel. 1998. __Fast and scalable layer four switching__. _SIGCOMM Comput. Commun. Rev. 28_, 4 (October 1998), 191-202. [DOI: 10.1145/285243.285282](http://doi.acm.org/10.1145/285243.285282)
+> V. Srinivasan, G. Varghese, S. Suri, and M. Waldvogel. __Fast and scalable layer four switching__. _SIGCOMM Comput. Commun. Rev. 28_, 4 (October 1998), 191-202. [DOI: 10.1145/285243.285282](http://doi.acm.org/10.1145/285243.285282)
 
 Here is an example of the net filters syntax:
 
