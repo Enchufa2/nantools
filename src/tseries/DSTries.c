@@ -15,7 +15,8 @@
 #define TREEORDER 2     // Árbol binario
 #define TREEDEPTH 32    // Direcciones de 32 bits
 
-#define BIT(x, y) ((y >> x) & 0x0001)   // El bit de la posición x del número y
+// Devuelve el bit x de y teniendo en cuenta que y lleva orden de red
+#define BIT(x, y) ((y >> (x / 8) * 8 + 7 - (x % 8)) & 0x0001)
 
 static unsigned int dstID;
 
