@@ -7,19 +7,14 @@ This project wants to be yet another set of network analysis tools. Currently, t
 
 ## Compilation
 
-You need to install the libpcap library. Then, simply run these commands:
+You need to install the libpcap library and autotools. Then, simply run these commands:
 
 ```bash
-git clone git@github.com:Enchufa2/nantools.git
-cd build
+git clone https://github.com/Enchufa2/nantools.git
+cd nantools
+autoreconf --install
+./configure
 make
-```
-
-You can also build specific targets only:
-
-```bash
-make infodups
-make tseries
 ```
 
 ## Description
