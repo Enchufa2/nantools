@@ -7,10 +7,7 @@
  *  This program is published under a GPLv3 license
  */
 
-#define INFODUPS_VERSION "1.1.0"
-
-#define _FILE_OFFSET_BITS 64
-
+#include "../config.h"
 #include <stdlib.h>
 #include <string.h>
 #include <unistd.h>

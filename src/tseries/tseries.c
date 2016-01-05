@@ -9,10 +9,7 @@
 
 // TODO: translate comments
 
-#define TSERIES_VERSION "1.0.0"
-
-#define _FILE_OFFSET_BITS 64
-
+#include "../config.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
