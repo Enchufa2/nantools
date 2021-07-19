@@ -22,6 +22,8 @@
 static struct obstack pkt_obstack;  /**< obstack that stores packets */
 static pktStats_t *pkt_stats;       /**< pointer to packet statistics */
 
+int (*pkt_dissect)(pkt_t *pkt) = NULL;
+
 /**
  * @brief Ethernet frame constructor
  *

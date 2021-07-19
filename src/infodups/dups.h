@@ -33,7 +33,7 @@ typedef struct {
     int         (*comparator)();    /**< specific comparator */
 } dup_t;
 
-dup_t DUPS_TYPE[DUPS_COMPARATORS];  /**< Array of types */
+extern dup_t DUPS_TYPE[DUPS_COMPARATORS];  /**< Array of types */
 
 // initializer
 // fast mode: only IP packets + switching duplicates + routing duplicates
@@ -48,7 +48,7 @@ void dups_init(unsigned int dupMask, int fast, int mode, char *value, int extend
  * @param bufSize   number of bytes written to the stream
  * @return 1 if a duplicate was found, 0 if not, -1 on error
  */
-int (*dups_search)(node_t *node, unsigned int id, char *output, int *bufSize);
+extern int (*dups_search)(node_t *node, unsigned int id, char *output, int *bufSize);
 
 // cleaner
 void dups_destroy();

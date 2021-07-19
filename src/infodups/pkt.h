@@ -89,7 +89,7 @@ pkt_t *pkt_fill(node_t *node, unsigned long long pos, void *bytes, int size, int
  * @param pkt the packet
  * @return 0 on success, -1 on error
  */
-int (*pkt_dissect)(pkt_t *pkt);
+extern int (*pkt_dissect)(pkt_t *pkt);
 
 // copy the contents of pkt1 in pkt2 with (copyTs=1) or without (copyTs=0) changing the timestamp
 int pkt_copy(pkt_t *src, pkt_t *dst, int copyTs);

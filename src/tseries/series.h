@@ -15,11 +15,11 @@
 
 #include <pcap/pcap.h>
 
-unsigned int        series_mode;
-unsigned long long  series_initTime;
-unsigned int        series_msecsPointInTimeSeries;  // Anchura del cubo de la serie temporal en milisegundos
-unsigned int        series_dumpZeros;               // Volcar en la serie temporal todas muestras que se queden a 0 entre dos muestras con valor
-unsigned int        series_breakAtFirstMatch;
+extern unsigned int        series_mode;
+extern unsigned long long  series_initTime;
+extern unsigned int        series_msecsPointInTimeSeries;  // Anchura del cubo de la serie temporal en milisegundos
+extern unsigned int        series_dumpZeros;               // Volcar en la serie temporal todas muestras que se queden a 0 entre dos muestras con valor
+extern unsigned int        series_breakAtFirstMatch;
 
 int series_init();
 

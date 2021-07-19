@@ -15,8 +15,10 @@
 #include <stdlib.h>
 
 unsigned int series_mode = SERIES_BPF;
+unsigned long long series_initTime = 0;
 unsigned int series_msecsPointInTimeSeries = 1000;
 unsigned int series_dumpZeros = 1;
+unsigned int series_breakAtFirstMatch = 0;
 
 typedef struct {
     int                 id;

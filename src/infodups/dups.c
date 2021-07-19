@@ -39,6 +39,8 @@ dup_t DUPS_TYPE[DUPS_COMPARATORS] = {
     {.description = "NAT Routing with fragmentation",   .comparator = NULL}
 };
 
+int (*dups_search)(node_t *node, unsigned int id, char *output, int *bufSize) = NULL;
+
 /**
  * @brief Compares source and destination MACs of two packets
  *
